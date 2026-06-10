@@ -3,48 +3,1095 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AMIA NLP 2026</title>
+    <title>AMIA NLP 2026 Call for Workshop Proposals</title>
+    <meta
+      name="description"
+      content="AMIA 2026 NLP Working Group Pre-Symposium Workshop call for workshop proposals."
+    >
     <style>
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        font-family: Arial, sans-serif;
-        background: #f6f8fb;
-        color: #1f2937;
+      :root {
+        color-scheme: light;
+        --ink: #111111;
+        --muted: #5f6368;
+        --soft: #f5f5f7;
+        --line: rgba(0, 0, 0, 0.1);
+        --blue: #0066cc;
+        --teal: #008c95;
+        --red: #7a0019;
+        --gold: #b17900;
+        --white: #ffffff;
+        --shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
       }
 
-      main {
-        max-width: 720px;
-        padding: 48px 24px;
-        text-align: center;
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+        background: var(--white);
+        color: var(--ink);
+        line-height: 1.55;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+        background: rgba(250, 250, 252, 0.78);
+        backdrop-filter: saturate(180%) blur(20px);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 14px 0;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 28px;
+        height: 28px;
+        place-items: center;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #111111, #4b5563);
+        color: #ffffff;
+        font-size: 12px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        color: rgba(17, 17, 17, 0.72);
+        font-size: 14px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+      }
+
+      .nav-links a:hover {
+        color: var(--ink);
+      }
+
+      .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        min-height: 36px;
+        padding: 8px 14px;
+        border-radius: 8px;
+        background: var(--ink);
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 650;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 680px;
+        overflow: hidden;
+        background: #030407;
+        color: #ffffff;
+      }
+
+      #hero-canvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .hero::after {
+        position: absolute;
+        inset: 0;
+        content: "";
+        background:
+          linear-gradient(90deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.42) 52%, rgba(0, 0, 0, 0.16) 100%),
+          linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.8) 100%);
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        align-content: center;
+        width: min(1120px, calc(100% - 40px));
+        min-height: 680px;
+        margin: 0 auto;
+        padding: 96px 0 72px;
+      }
+
+      .eyebrow {
+        width: fit-content;
+        margin: 0 0 22px;
+        padding: 8px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 13px;
+        font-weight: 650;
       }
 
       h1 {
-        margin: 0 0 16px;
-        font-size: clamp(36px, 8vw, 72px);
-        line-height: 1;
-      }
-
-      p {
+        max-width: 820px;
         margin: 0;
-        font-size: 20px;
-        line-height: 1.5;
+        font-size: 72px;
+        line-height: 0.95;
+        font-weight: 780;
       }
 
-      .stamp {
-        margin-top: 24px;
+      .hero-copy {
+        max-width: 680px;
+        margin: 28px 0 0;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 21px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 36px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 12px 20px;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .button.primary {
+        background: #ffffff;
+        color: #111111;
+      }
+
+      .button.secondary {
+        border-color: rgba(255, 255, 255, 0.24);
+        background: rgba(255, 255, 255, 0.08);
+        color: #ffffff;
+      }
+
+      .event-strip {
+        position: relative;
+        z-index: 3;
+        width: min(1120px, calc(100% - 40px));
+        margin: -58px auto 0;
+        border: 1px solid rgba(255, 255, 255, 0.42);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.88);
+        box-shadow: var(--shadow);
+        backdrop-filter: saturate(180%) blur(24px);
+      }
+
+      .event-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .event-item {
+        min-height: 116px;
+        padding: 24px;
+        border-right: 1px solid var(--line);
+      }
+
+      .event-item:last-child {
+        border-right: 0;
+      }
+
+      .event-label {
+        margin: 0 0 8px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .event-value {
+        margin: 0;
+        color: var(--ink);
+        font-size: 22px;
+        font-weight: 760;
+      }
+
+      main {
+        background: #ffffff;
+      }
+
+      .section {
+        padding: 92px 0;
+      }
+
+      .section.soft {
+        background: var(--soft);
+      }
+
+      .section.dark {
+        background: #111111;
+        color: #ffffff;
+      }
+
+      .wrap {
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .section-kicker {
+        margin: 0 0 12px;
+        color: var(--blue);
         font-size: 14px;
-        color: #64748b;
+        font-weight: 760;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 44px;
+        line-height: 1.08;
+      }
+
+      h3 {
+        margin: 0 0 12px;
+        font-size: 22px;
+        line-height: 1.18;
+      }
+
+      .lead {
+        max-width: 920px;
+        margin: 24px 0 0;
+        color: rgba(17, 17, 17, 0.72);
+        font-size: 19px;
+      }
+
+      .section.dark .lead {
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: 0.88fr 1.12fr;
+        gap: 60px;
+        align-items: start;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+      }
+
+      .panel-inner {
+        padding: 28px;
+      }
+
+      .program-placeholder {
+        display: grid;
+        min-height: 260px;
+        place-items: center;
+        border: 1px dashed rgba(0, 0, 0, 0.22);
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(0, 102, 204, 0.08), rgba(0, 140, 149, 0.08)),
+          #ffffff;
+        text-align: center;
+      }
+
+      .program-placeholder strong {
+        display: block;
+        font-size: 32px;
+      }
+
+      .program-placeholder span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+      }
+
+      .timeline {
+        display: grid;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .date-row {
+        display: grid;
+        grid-template-columns: 190px 1fr;
+        gap: 18px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+      }
+
+      .date-row time,
+      .date-row .pending-date {
+        color: var(--red);
+        font-weight: 760;
+      }
+
+      .tracks {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        margin-top: 28px;
+      }
+
+      .track-card {
+        padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+      }
+
+      .track-card p,
+      .track-card li {
+        color: rgba(17, 17, 17, 0.72);
+      }
+
+      .track-card ul,
+      .plain-list {
+        padding-left: 20px;
+        margin: 14px 0 0;
+      }
+
+      .track-card li,
+      .plain-list li {
+        margin: 8px 0;
+      }
+
+      .notice {
+        margin-top: 20px;
+        padding: 20px;
+        border-left: 4px solid var(--gold);
+        border-radius: 8px;
+        background: #fff8e5;
+      }
+
+      .committee-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 32px;
+        padding: 0;
+        list-style: none;
+      }
+
+      .committee-grid li {
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+      }
+
+      .committee-grid strong {
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      .committee-grid span {
+        color: var(--muted);
+      }
+
+      .leadership-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 32px;
+      }
+
+      .leadership-card {
+        min-height: 260px;
+        padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.82)),
+          radial-gradient(circle at 20% 0%, rgba(0, 102, 204, 0.18), transparent 38%),
+          #ffffff;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+      }
+
+      .portrait-link {
+        display: block;
+        width: fit-content;
+        margin-bottom: 22px;
+        text-decoration: none;
+      }
+
+      .portrait {
+        width: 86px;
+        height: 86px;
+        border-radius: 22px;
+        object-fit: cover;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14);
+      }
+
+      .initials {
+        display: grid;
+        width: 54px;
+        height: 54px;
+        margin-bottom: 24px;
+        place-items: center;
+        border-radius: 14px;
+        background: #111111;
+        color: #ffffff;
+        font-weight: 760;
+      }
+
+      .role-pill {
+        display: inline-flex;
+        margin-bottom: 16px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(0, 102, 204, 0.1);
+        color: var(--blue);
+        font-size: 13px;
+        font-weight: 760;
+      }
+
+      .leadership-card p {
+        margin: 12px 0 0;
+        color: rgba(17, 17, 17, 0.72);
+      }
+
+      .profile-link {
+        display: inline-flex;
+        margin-top: 18px;
+        color: var(--blue);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .past-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+        margin-top: 32px;
+      }
+
+      .past-card {
+        display: grid;
+        min-height: 112px;
+        place-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.07);
+        color: #ffffff;
+        text-decoration: none;
+        transition: transform 180ms ease, background 180ms ease;
+      }
+
+      .past-card:hover {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      .past-card strong {
+        font-size: 28px;
+      }
+
+      .footer {
+        border-top: 1px solid var(--line);
+        padding: 34px 0;
+        background: #ffffff;
+        color: var(--muted);
+      }
+
+      .footer .wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      @media (max-width: 900px) {
+        .nav-links {
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+
+        h1 {
+          font-size: 48px;
+        }
+
+        h2 {
+          font-size: 34px;
+        }
+
+        .hero,
+        .hero-inner {
+          min-height: 620px;
+        }
+
+        .event-grid,
+        .split,
+        .tracks,
+        .committee-grid,
+        .leadership-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .event-item {
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .event-item:last-child {
+          border-bottom: 0;
+        }
+
+        .past-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 720px) {
+        .nav-links {
+          display: none;
+        }
+
+        .nav {
+          width: min(100% - 28px, 1120px);
+        }
+      }
+
+      @media (max-width: 560px) {
+        h1 {
+          font-size: 40px;
+        }
+
+        .hero-copy,
+        .lead {
+          font-size: 17px;
+        }
+
+        .event-strip,
+        .wrap,
+        .nav,
+        .hero-inner {
+          width: min(100% - 28px, 1120px);
+        }
+
+        .section {
+          padding: 68px 0;
+        }
+
+        .date-row {
+          grid-template-columns: 1fr;
+        }
+
+        .past-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer .wrap {
+          flex-direction: column;
+        }
       }
     </style>
   </head>
   <body>
+    <header class="topbar">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="AMIA NLP 2026 home">
+          <span class="brand-mark">NLP</span>
+          <span>AMIA NLP 2026</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#program">Program</a></li>
+          <li><a href="#submission">Submission</a></li>
+          <li><a href="#organization">Organization</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a class="nav-cta" href="https://easychair.org/my/conference?conf=amianlp2026">Submit</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="top">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-inner">
+        <p class="eyebrow">Call for Workshop Proposals</p>
+        <h1>AMIA 2026 NLP Working Group Pre-Symposium Workshop</h1>
+        <p class="hero-copy">
+          A forum for biomedical and clinical NLP researchers to share emerging work,
+          receive focused feedback, and connect around health-related language technologies.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://easychair.org/my/conference?conf=amianlp2026">
+            Submit via EasyChair
+          </a>
+          <a class="button secondary" href="#submission">View submission details</a>
+        </div>
+      </div>
+    </section>
+
+    <aside class="event-strip" aria-label="Event summary">
+      <div class="event-grid">
+        <div class="event-item">
+          <p class="event-label">Time</p>
+          <p class="event-value">Nov 8, 2026</p>
+        </div>
+        <div class="event-item">
+          <p class="event-label">Place</p>
+          <p class="event-value">Dallas, TX</p>
+        </div>
+        <div class="event-item">
+          <p class="event-label">Submission</p>
+          <p class="event-value">EasyChair</p>
+        </div>
+      </div>
+    </aside>
+
     <main>
-      <h1>AMIA NLP 2026</h1>
-      <p>GitHub Pages smoke test page.</p>
-      <p class="stamp">Updated locally on 2026-06-04.</p>
+      <section class="section" id="intro">
+        <div class="wrap split">
+          <div>
+            <p class="section-kicker">Introduction</p>
+            <h2>Biomedical NLP in a changing health AI landscape.</h2>
+          </div>
+          <div>
+            <p class="lead">
+              The application of Natural Language Processing (NLP) in everyday life has rapidly progressed over the past decades.
+              This progress has been enabled by the availability of tools, large language models, and resources that could be shared,
+              reused, and fine-tuned to support users' projects and collaborations. Today, recently evolved large generative language
+              models are being integrated into general search and workplace productivity tools.
+            </p>
+            <p class="lead">
+              Applying NLP to the textual content of patient electronic health records, clinical text, is constrained by strict patient
+              privacy and confidentiality laws and regulations. These domain-specific peculiarities for access and sharing of resources,
+              such as annotated text corpora, and tools, such as trained machine learning algorithms, require creative solutions.
+            </p>
+            <p class="lead">
+              The workshop aims to provide a platform for the next generation of biomedical NLP scientists to get focused feedback
+              on in-progress graduate work, provide a forum for state-of-the-art NLP and LLM work, and discuss promises and challenges
+              related to emerging generative AI technologies, especially in health systems and adjacent industries.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft" id="program">
+        <div class="wrap split">
+          <div>
+            <p class="section-kicker">Program</p>
+            <h2>Program details will be announced later.</h2>
+            <p class="lead">
+              Session titles, speakers, and timing are intentionally left as placeholders until confirmed.
+            </p>
+          </div>
+          <div class="program-placeholder">
+            <div>
+              <strong>TBD</strong>
+              <span>Program schedule forthcoming</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="submission">
+        <div class="wrap">
+          <p class="section-kicker">Submission</p>
+          <h2>Submit your proposal through EasyChair.</h2>
+          <p class="lead">
+            The following submission categories and guidance are carried forward from the 2025 workshop page as draft text
+            for the 2026 call.
+          </p>
+
+          <div class="timeline" aria-label="Important dates">
+            <div class="date-row">
+              <strong>Submission Deadline</strong>
+              <span class="pending-date">TBD</span>
+            </div>
+            <div class="date-row">
+              <strong>Notification of Acceptance</strong>
+              <span class="pending-date">TBD</span>
+            </div>
+            <div class="date-row">
+              <strong>Workshop</strong>
+              <time datetime="2026-11-08">November 8, 2026</time>
+            </div>
+          </div>
+
+          <div class="tracks">
+            <article class="track-card">
+              <h3>Graduate Student Consortium</h3>
+              <p>
+                Graduate students are invited to submit applications for a podium presentation of their graduate research work
+                in the biomedical and clinical NLP fields. The submission is suggested to include:
+              </p>
+              <ul>
+                <li>Aims and objectives</li>
+                <li>Justification for the research topic</li>
+                <li>Research questions</li>
+                <li>Research methodology</li>
+                <li>Research results to date</li>
+                <li>References</li>
+              </ul>
+            </article>
+
+            <article class="track-card">
+              <h3>State-of-the-Art Biomedical and Clinical NLP</h3>
+              <p>
+                Researchers are encouraged to submit recent research studies, tools, resources, events, and community shared tasks.
+                The following sections are suggested:
+              </p>
+              <ul>
+                <li>Methods, tools, resources, events, or shared tasks description</li>
+                <li>Justification of the inclusion</li>
+                <li>Summary or outcome</li>
+                <li>References</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="notice">
+            <h3>Submission Guidelines</h3>
+            <p>
+              All submissions have a page limit of <strong>2 pages</strong> using the
+              <a href="https://brand.amia.org/m/95c9b4f4632c1fe/original/amia-symposium-template-paper-poster.docx">
+                AMIA Template
+              </a>.
+            </p>
+            <p>
+              <a class="button primary" href="https://easychair.org/my/conference?conf=amianlp2026">
+                Submit Your Proposal Here
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft" id="organization">
+        <div class="wrap">
+          <p class="section-kicker">Organization</p>
+          <h2>Organization Committee</h2>
+          <p class="lead">
+            Draft committee text follows the 2025 workshop page and can be updated once the 2026 roster is finalized.
+          </p>
+          <ul class="committee-grid">
+            <li><strong>Rui Zhang, PhD, FACMI, FAMIA, FIAHSI</strong><span>Chair, University of Minnesota, Minneapolis, MN</span></li>
+            <li><strong>Sunyang Fu, PhD, MHI</strong><span>Vice Chair, University of Texas Health Science Center at Houston, TX</span></li>
+            <li><strong>Yanshan Wang, PhD</strong><span>Past Chair, University of Pittsburgh, PA</span></li>
+            <li><strong>Sujani Kakumanu, MD</strong><span>Member-at-Large, University of Wisconsin, Madison, WI</span></li>
+            <li><strong>Jiyeong Kim, PhD</strong><span>Member-at-Large, Stanford University, CA</span></li>
+            <li><strong>Xinsong Du, PhD</strong><span>Secretary, Harvard Medical School, Boston, MA</span></li>
+            <li><strong>Kirk Roberts, PhD</strong><span>University of Texas Health Science Center at Houston, Houston, TX</span></li>
+            <li><strong>Hua Xu, PhD</strong><span>Yale University, New Haven, CT</span></li>
+            <li><strong>Ozlem Uzuner, PhD, FACMI</strong><span>George Mason University, Fairfax, VA</span></li>
+            <li><strong>Meliha Yetisgen, PhD</strong><span>University of Washington, Seattle, WA</span></li>
+            <li><strong>Hongfang Liu, PhD</strong><span>University of Texas Health Science Center at Houston, TX</span></li>
+            <li><strong>Stephane Meystre, MD, PhD</strong><span>University of Applied Sciences and Arts of Southern Switzerland, Lugano, Switzerland</span></li>
+            <li><strong>Chunhua Weng, PhD</strong><span>Columbia University, New York, NY</span></li>
+            <li><strong>Mesoud Rouhizadeh, PhD</strong><span>University of Florida, Gainesville, FL</span></li>
+            <li><strong>Yifan Peng, PhD</strong><span>Weill Cornell Medicine, New York City, NY</span></li>
+            <li><strong>Abeed Sarker, PhD</strong><span>Emory University, Atlanta, GA</span></li>
+            <li><strong>Ramakanth Kavuluru</strong><span>University of Kentucky, Lexington, KY</span></li>
+            <li><strong>Joseph M. Plasek, PhD</strong><span>Mass General Brigham, Boston, MA</span></li>
+            <li><strong>Satya Sahoo, PhD</strong><span>Case Western Reserve University, Cleveland, OH</span></li>
+            <li><strong>Steve Bedrick, PhD</strong><span>Oregon Health & Science University, Portland, OR</span></li>
+            <li><strong>Dina Demner-Fushman, MD, PhD</strong><span>National Library of Medicine, Bethesda, MD</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="leadership">
+        <div class="wrap">
+          <p class="section-kicker">Leadership</p>
+          <h2>AMIA NLP Working Group Leadership</h2>
+          <p class="lead">
+            Draft leadership text follows the 2025 workshop page and can be updated once the 2026 leadership roster is finalized.
+          </p>
+          <div class="leadership-grid">
+            <article class="leadership-card">
+              <a class="portrait-link" href="https://amia.org/membership/rui-zhang-phd-famia-facmi">
+                <img class="portrait" src="src/rui.png" alt="Rui Zhang">
+              </a>
+              <span class="role-pill">Chair</span>
+              <h3>Rui Zhang, PhD, FACMI, FAMIA, FIAHSI</h3>
+              <p>
+                Professor and Founding Chief, Division of Computational Health Sciences, Medical School,
+                University of Minnesota, Minneapolis, MN.
+              </p>
+              <a class="profile-link" href="https://amia.org/membership/rui-zhang-phd-famia-facmi">Profile</a>
+            </article>
+
+            <article class="leadership-card">
+              <a class="portrait-link" href="https://amia.org/membership/sunyang-fu-phd-mhi">
+                <img class="portrait" src="src/sunyang2.jpg" alt="Sunyang Fu">
+              </a>
+              <span class="role-pill">Vice Chair</span>
+              <h3>Sunyang Fu, PhD, MHI</h3>
+              <p>
+                Associate Professor, University of Texas Health Science Center at Houston, TX.
+              </p>
+              <a class="profile-link" href="https://amia.org/membership/sunyang-fu-phd-mhi">Profile</a>
+            </article>
+
+            <article class="leadership-card">
+              <a class="portrait-link" href="https://amia.org/membership/yanshan-wang-phd">
+                <img class="portrait" src="src/naoshi.png" alt="Yanshan Wang">
+              </a>
+              <span class="role-pill">Past Chair</span>
+              <h3>Yanshan Wang, PhD</h3>
+              <p>
+                Assistant Professor and Vice-Chair of Health Informatics Research, University of Pittsburgh, PA.
+              </p>
+              <a class="profile-link" href="https://amia.org/membership/yanshan-wang-phd">Profile</a>
+            </article>
+
+            <article class="leadership-card">
+              <a class="portrait-link" href="https://amia.org/membership/sujani-kakumanu-md">
+                <img class="portrait" src="src/sujani.png" alt="Sujani Kakumanu">
+              </a>
+              <span class="role-pill">Member-at-Large</span>
+              <h3>Sujani Kakumanu, MD</h3>
+              <p>
+                Clinical Associate Professor, Allergy & Immunology, William S. Middleton Veterans Hospital,
+                University of Wisconsin, Madison, WI.
+              </p>
+              <a class="profile-link" href="https://amia.org/membership/sujani-kakumanu-md">Profile</a>
+            </article>
+
+            <article class="leadership-card">
+              <a class="portrait-link" href="https://profiles.stanford.edu/jiyeong-kim">
+                <img class="portrait" src="src/jiyeong.png" alt="Jiyeong Kim">
+              </a>
+              <span class="role-pill">Member-at-Large</span>
+              <h3>Jiyeong Kim, PhD</h3>
+              <p>
+                Post doctoral scholar, Stanford University, CA.
+              </p>
+              <a class="profile-link" href="https://profiles.stanford.edu/jiyeong-kim">Profile</a>
+            </article>
+
+            <article class="leadership-card">
+              <a class="portrait-link" href="https://amia.org/membership/xinsong-du-phd">
+                <img class="portrait" src="src/xinsong.png" alt="Xinsong Du">
+              </a>
+              <span class="role-pill">Secretary</span>
+              <h3>Xinsong Du, PhD</h3>
+              <p>
+                Postdoctoral Research Fellow, Harvard Medical School, Boston, MA.
+              </p>
+              <a class="profile-link" href="https://amia.org/membership/xinsong-du-phd">Profile</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sponsors">
+        <div class="wrap split">
+          <div>
+            <p class="section-kicker">Sponsors</p>
+            <h2>TBD</h2>
+          </div>
+          <div class="panel">
+            <div class="panel-inner">
+              <p>
+                Sponsor information will be added after confirmation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section dark" id="past-events">
+        <div class="wrap">
+          <p class="section-kicker">Past Events</p>
+          <h2>Previous AMIA NLP workshop pages.</h2>
+          <div class="past-grid">
+            <a class="past-card" href="https://ohnlp.github.io/AMIANLPWG2018/NLP-WG.html"><strong>2021</strong></a>
+            <a class="past-card" href="https://pittnail.github.io/AMIANLP2022/"><strong>2022</strong></a>
+            <a class="past-card" href="https://pittnail.github.io/AMIANLP2023/"><strong>2023</strong></a>
+            <a class="past-card" href="https://pittnail.github.io/AMIANLP2024/"><strong>2024</strong></a>
+            <a class="past-card" href="https://zhang-informatics.github.io/AMIANLP2025/index.html"><strong>2025</strong></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="wrap split">
+          <div>
+            <p class="section-kicker">Contact</p>
+            <h2>Contact Us</h2>
+          </div>
+          <div>
+            <p class="lead">
+              Rui Zhang:
+              <a href="mailto:ruizhang@umn.edu">ruizhang@umn.edu</a>
+            </p>
+            <p class="lead">
+              Official AMIA NLP Working Group:
+              <a href="https://amia.org/community/working-groups/natural-language-processing">
+                Natural Language Processing Working Group
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <span>AMIA NLP 2026</span>
+        <span>Draft call page for local review.</span>
+      </div>
+    </footer>
+
+    <script>
+      const canvas = document.getElementById("hero-canvas");
+      const ctx = canvas.getContext("2d");
+      let width = 0;
+      let height = 0;
+      let frame = 0;
+
+      function resizeCanvas() {
+        const scale = window.devicePixelRatio || 1;
+        width = canvas.offsetWidth;
+        height = canvas.offsetHeight;
+        canvas.width = Math.floor(width * scale);
+        canvas.height = Math.floor(height * scale);
+        ctx.setTransform(scale, 0, 0, scale, 0, 0);
+      }
+
+      function drawSkyline() {
+        const base = height * 0.82;
+        const buildings = [
+          [0.58, 0.32, 0.035],
+          [0.62, 0.46, 0.048],
+          [0.68, 0.28, 0.05],
+          [0.74, 0.38, 0.04],
+          [0.8, 0.24, 0.052],
+          [0.87, 0.42, 0.04],
+          [0.93, 0.35, 0.052]
+        ];
+
+        ctx.fillStyle = "rgba(255,255,255,0.08)";
+        buildings.forEach(([x, h, w]) => {
+          const bx = x * width;
+          const bw = Math.max(34, w * width);
+          const bh = h * height;
+          ctx.fillRect(bx, base - bh, bw, bh);
+          ctx.fillStyle = "rgba(255,255,255,0.13)";
+          for (let row = 0; row < 8; row += 1) {
+            ctx.fillRect(bx + 8, base - bh + 18 + row * 24, bw - 16, 1);
+          }
+          ctx.fillStyle = "rgba(255,255,255,0.08)";
+        });
+
+        const towerX = width * 0.76;
+        ctx.strokeStyle = "rgba(255,255,255,0.2)";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(towerX, base);
+        ctx.lineTo(towerX, height * 0.38);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(towerX, height * 0.35, 30, 0, Math.PI * 2);
+        ctx.strokeStyle = "rgba(0, 140, 149, 0.65)";
+        ctx.stroke();
+      }
+
+      function drawNetwork() {
+        const points = [
+          [0.16, 0.22],
+          [0.28, 0.18],
+          [0.38, 0.28],
+          [0.2, 0.48],
+          [0.34, 0.56],
+          [0.5, 0.42],
+          [0.58, 0.62]
+        ];
+        ctx.lineWidth = 1;
+        points.forEach(([x, y], index) => {
+          if (index === 0) return;
+          const previous = points[index - 1];
+          ctx.strokeStyle = "rgba(255,255,255,0.12)";
+          ctx.beginPath();
+          ctx.moveTo(previous[0] * width, previous[1] * height);
+          ctx.lineTo(x * width, y * height);
+          ctx.stroke();
+        });
+
+        points.forEach(([x, y], index) => {
+          const pulse = 4 + Math.sin(frame / 36 + index) * 1.5;
+          ctx.fillStyle = index % 2 ? "rgba(0, 102, 204, 0.78)" : "rgba(0, 140, 149, 0.78)";
+          ctx.beginPath();
+          ctx.arc(x * width, y * height, pulse, 0, Math.PI * 2);
+          ctx.fill();
+        });
+      }
+
+      function drawGrid() {
+        ctx.strokeStyle = "rgba(255,255,255,0.04)";
+        ctx.lineWidth = 1;
+        for (let x = 0; x < width; x += 44) {
+          ctx.beginPath();
+          ctx.moveTo(x, 0);
+          ctx.lineTo(x, height);
+          ctx.stroke();
+        }
+        for (let y = 0; y < height; y += 44) {
+          ctx.beginPath();
+          ctx.moveTo(0, y);
+          ctx.lineTo(width, y);
+          ctx.stroke();
+        }
+      }
+
+      function render() {
+        frame += 1;
+        ctx.clearRect(0, 0, width, height);
+        const gradient = ctx.createLinearGradient(0, 0, width, height);
+        gradient.addColorStop(0, "#05070d");
+        gradient.addColorStop(0.45, "#121827");
+        gradient.addColorStop(1, "#25120f");
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, width, height);
+        drawGrid();
+        drawNetwork();
+        drawSkyline();
+        requestAnimationFrame(render);
+      }
+
+      resizeCanvas();
+      render();
+      window.addEventListener("resize", resizeCanvas);
+    </script>
   </body>
 </html>
