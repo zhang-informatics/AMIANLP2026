@@ -11,16 +11,16 @@
     <style>
       :root {
         color-scheme: light;
-        --ink: #111111;
-        --muted: #5f6368;
-        --soft: #f5f5f7;
-        --line: rgba(0, 0, 0, 0.1);
-        --blue: #0066cc;
-        --teal: #008c95;
-        --red: #7a0019;
-        --gold: #b17900;
+        --ink: #172033;
+        --muted: #667085;
+        --soft: #f6f9fc;
+        --line: rgba(23, 32, 51, 0.11);
+        --blue: #2563eb;
+        --teal: #0e9384;
+        --red: #9f1239;
+        --gold: #b7791f;
         --white: #ffffff;
-        --shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+        --shadow: 0 24px 60px rgba(23, 32, 51, 0.13);
       }
 
       * {
@@ -34,7 +34,8 @@
       body {
         margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
-        background: var(--white);
+        background:
+          linear-gradient(180deg, #fbfdff 0%, #ffffff 42%, #fffaf4 100%);
         color: var(--ink);
         line-height: 1.55;
       }
@@ -47,8 +48,8 @@
         position: sticky;
         top: 0;
         z-index: 20;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.35);
-        background: rgba(250, 250, 252, 0.78);
+        border-bottom: 1px solid rgba(37, 99, 235, 0.08);
+        background: rgba(249, 251, 255, 0.82);
         backdrop-filter: saturate(180%) blur(20px);
       }
 
@@ -76,7 +77,7 @@
         height: 28px;
         place-items: center;
         border-radius: 8px;
-        background: linear-gradient(135deg, #111111, #4b5563);
+        background: linear-gradient(135deg, #1d4ed8, #0f766e);
         color: #ffffff;
         font-size: 12px;
       }
@@ -106,17 +107,18 @@
         min-height: 36px;
         padding: 8px 14px;
         border-radius: 8px;
-        background: var(--ink);
+        background: linear-gradient(135deg, var(--blue), var(--teal));
         color: #ffffff;
         text-decoration: none;
         font-weight: 650;
+        box-shadow: 0 10px 22px rgba(37, 99, 235, 0.18);
       }
 
       .hero {
         position: relative;
         min-height: 680px;
         overflow: hidden;
-        background: #030407;
+        background: #061524;
         color: #ffffff;
       }
 
@@ -132,8 +134,8 @@
         inset: 0;
         content: "";
         background:
-          linear-gradient(90deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.42) 52%, rgba(0, 0, 0, 0.16) 100%),
-          linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.8) 100%);
+          linear-gradient(90deg, rgba(6, 21, 36, 0.84) 0%, rgba(6, 31, 48, 0.5) 54%, rgba(64, 42, 28, 0.22) 100%),
+          linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(7, 16, 30, 0.74) 100%);
       }
 
       .hero-inner {
@@ -151,10 +153,10 @@
         width: fit-content;
         margin: 0 0 22px;
         padding: 8px 12px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(169, 230, 221, 0.28);
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.08);
-        color: rgba(255, 255, 255, 0.82);
+        background: rgba(14, 147, 132, 0.14);
+        color: rgba(245, 255, 252, 0.88);
         font-size: 13px;
         font-weight: 650;
       }
@@ -194,13 +196,13 @@
       }
 
       .button.primary {
-        background: #ffffff;
-        color: #111111;
+        background: linear-gradient(135deg, #ffffff, #eef7ff);
+        color: #132033;
       }
 
       .button.secondary {
-        border-color: rgba(255, 255, 255, 0.24);
-        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(169, 230, 221, 0.28);
+        background: rgba(255, 255, 255, 0.1);
         color: #ffffff;
       }
 
@@ -211,7 +213,8 @@
         margin: -58px auto 0;
         border: 1px solid rgba(255, 255, 255, 0.42);
         border-radius: 8px;
-        background: rgba(255, 255, 255, 0.88);
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(239, 249, 255, 0.9) 52%, rgba(255, 248, 236, 0.9));
         box-shadow: var(--shadow);
         backdrop-filter: saturate(180%) blur(24px);
       }
@@ -247,7 +250,8 @@
       }
 
       main {
-        background: #ffffff;
+        background:
+          linear-gradient(180deg, #ffffff 0%, #fbfdff 48%, #fffaf4 100%);
       }
 
       .section {
@@ -255,11 +259,13 @@
       }
 
       .section.soft {
-        background: var(--soft);
+        background:
+          linear-gradient(135deg, #f5f9ff 0%, #fbfcff 52%, #fff7ed 100%);
       }
 
       .section.dark {
-        background: #111111;
+        background:
+          linear-gradient(135deg, #071524 0%, #0b2330 54%, #2a1c16 100%);
         color: #ffffff;
       }
 
@@ -309,7 +315,8 @@
       .panel {
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: #ffffff;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 251, 255, 0.94));
         box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
       }
 
@@ -321,10 +328,10 @@
         display: grid;
         min-height: 260px;
         place-items: center;
-        border: 1px dashed rgba(0, 0, 0, 0.22);
+        border: 1px dashed rgba(37, 99, 235, 0.26);
         border-radius: 8px;
         background:
-          linear-gradient(135deg, rgba(0, 102, 204, 0.08), rgba(0, 140, 149, 0.08)),
+          linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(14, 147, 132, 0.1), rgba(183, 121, 31, 0.08)),
           #ffffff;
         text-align: center;
       }
@@ -353,7 +360,8 @@
         padding: 18px;
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: #ffffff;
+        background:
+          linear-gradient(135deg, #ffffff, #f7fbff);
       }
 
       .date-row time,
@@ -373,7 +381,8 @@
         padding: 24px;
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: #ffffff;
+        background:
+          linear-gradient(180deg, #ffffff, #fbfdff);
       }
 
       .track-card p,
@@ -397,7 +406,7 @@
         padding: 20px;
         border-left: 4px solid var(--gold);
         border-radius: 8px;
-        background: #fff8e5;
+        background: linear-gradient(135deg, #fff8e5, #f6fbff);
       }
 
       .committee-grid {
@@ -413,7 +422,8 @@
         padding: 18px;
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: #ffffff;
+        background:
+          linear-gradient(180deg, #ffffff, #fbfdff);
       }
 
       .committee-grid strong {
@@ -438,8 +448,7 @@
         border: 1px solid var(--line);
         border-radius: 8px;
         background:
-          linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.82)),
-          radial-gradient(circle at 20% 0%, rgba(0, 102, 204, 0.18), transparent 38%),
+          linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(238, 247, 255, 0.76) 56%, rgba(255, 247, 237, 0.58)),
           #ffffff;
         box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
       }
@@ -477,7 +486,7 @@
         margin-bottom: 16px;
         padding: 6px 10px;
         border-radius: 999px;
-        background: rgba(0, 102, 204, 0.1);
+        background: rgba(37, 99, 235, 0.1);
         color: var(--blue);
         font-size: 13px;
         font-weight: 760;
@@ -509,10 +518,11 @@
         min-height: 44px;
         padding: 11px 16px;
         border-radius: 8px;
-        background: #111111;
+        background: linear-gradient(135deg, var(--blue), var(--teal));
         color: #ffffff;
         font-weight: 720;
         text-decoration: none;
+        box-shadow: 0 12px 26px rgba(37, 99, 235, 0.17);
       }
 
       .past-grid {
@@ -526,9 +536,9 @@
         display: grid;
         min-height: 112px;
         place-items: center;
-        border: 1px solid rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(169, 230, 221, 0.22);
         border-radius: 8px;
-        background: rgba(255, 255, 255, 0.07);
+        background: rgba(255, 255, 255, 0.09);
         color: #ffffff;
         text-decoration: none;
         transition: transform 180ms ease, background 180ms ease;
@@ -1025,21 +1035,21 @@
           [0.93, 0.35, 0.052]
         ];
 
-        ctx.fillStyle = "rgba(255,255,255,0.08)";
+        ctx.fillStyle = "rgba(176, 214, 232, 0.11)";
         buildings.forEach(([x, h, w]) => {
           const bx = x * width;
           const bw = Math.max(34, w * width);
           const bh = h * height;
           ctx.fillRect(bx, base - bh, bw, bh);
-          ctx.fillStyle = "rgba(255,255,255,0.13)";
+          ctx.fillStyle = "rgba(233, 245, 255, 0.16)";
           for (let row = 0; row < 8; row += 1) {
             ctx.fillRect(bx + 8, base - bh + 18 + row * 24, bw - 16, 1);
           }
-          ctx.fillStyle = "rgba(255,255,255,0.08)";
+          ctx.fillStyle = "rgba(176, 214, 232, 0.11)";
         });
 
         const towerX = width * 0.76;
-        ctx.strokeStyle = "rgba(255,255,255,0.2)";
+        ctx.strokeStyle = "rgba(226, 239, 255, 0.24)";
         ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.moveTo(towerX, base);
@@ -1047,7 +1057,7 @@
         ctx.stroke();
         ctx.beginPath();
         ctx.arc(towerX, height * 0.35, 30, 0, Math.PI * 2);
-        ctx.strokeStyle = "rgba(0, 140, 149, 0.65)";
+        ctx.strokeStyle = "rgba(20, 184, 166, 0.68)";
         ctx.stroke();
       }
 
@@ -1065,7 +1075,7 @@
         points.forEach(([x, y], index) => {
           if (index === 0) return;
           const previous = points[index - 1];
-          ctx.strokeStyle = "rgba(255,255,255,0.12)";
+          ctx.strokeStyle = "rgba(201, 236, 255, 0.15)";
           ctx.beginPath();
           ctx.moveTo(previous[0] * width, previous[1] * height);
           ctx.lineTo(x * width, y * height);
@@ -1074,7 +1084,7 @@
 
         points.forEach(([x, y], index) => {
           const pulse = 4 + Math.sin(frame / 36 + index) * 1.5;
-          ctx.fillStyle = index % 2 ? "rgba(0, 102, 204, 0.78)" : "rgba(0, 140, 149, 0.78)";
+          ctx.fillStyle = index % 2 ? "rgba(96, 165, 250, 0.78)" : "rgba(45, 212, 191, 0.78)";
           ctx.beginPath();
           ctx.arc(x * width, y * height, pulse, 0, Math.PI * 2);
           ctx.fill();
@@ -1082,7 +1092,7 @@
       }
 
       function drawGrid() {
-        ctx.strokeStyle = "rgba(255,255,255,0.04)";
+        ctx.strokeStyle = "rgba(213, 235, 255, 0.045)";
         ctx.lineWidth = 1;
         for (let x = 0; x < width; x += 44) {
           ctx.beginPath();
@@ -1102,9 +1112,9 @@
         frame += 1;
         ctx.clearRect(0, 0, width, height);
         const gradient = ctx.createLinearGradient(0, 0, width, height);
-        gradient.addColorStop(0, "#05070d");
-        gradient.addColorStop(0.45, "#121827");
-        gradient.addColorStop(1, "#25120f");
+        gradient.addColorStop(0, "#061524");
+        gradient.addColorStop(0.48, "#0c2b3a");
+        gradient.addColorStop(1, "#3a2418");
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, width, height);
         drawGrid();
