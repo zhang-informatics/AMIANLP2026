@@ -324,27 +324,120 @@
         padding: 28px;
       }
 
-      .program-placeholder {
+      .program-intro {
+        max-width: 760px;
+      }
+
+      .agenda {
         display: grid;
-        min-height: 260px;
-        place-items: center;
-        border: 1px dashed rgba(37, 99, 235, 0.26);
+        gap: 16px;
+        margin-top: 36px;
+      }
+
+      .agenda-session,
+      .agenda-break {
+        border: 1px solid var(--line);
         border-radius: 8px;
-        background:
-          linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(14, 147, 132, 0.1), rgba(183, 121, 31, 0.08)),
-          #ffffff;
-        text-align: center;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
       }
 
-      .program-placeholder strong {
-        display: block;
-        font-size: 32px;
+      .agenda-header,
+      .agenda-talk,
+      .agenda-break {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 22px;
       }
 
-      .program-placeholder span {
-        display: block;
-        margin-top: 8px;
+      .agenda-header {
+        padding: 22px;
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(14, 147, 132, 0.08));
+      }
+
+      .agenda-talk {
+        padding: 18px 22px;
+        border-top: 1px solid var(--line);
+      }
+
+      .agenda-break {
+        padding: 20px 22px;
+        background: linear-gradient(135deg, #fff8e5, #f6fbff);
+      }
+
+      .agenda-time {
+        color: var(--red);
+        font-weight: 760;
+      }
+
+      .agenda-title {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 760;
+        line-height: 1.25;
+      }
+
+      .agenda-meta,
+      .agenda-speakers,
+      .person-card p {
+        margin: 6px 0 0;
         color: var(--muted);
+      }
+
+      .agenda-talk h3 {
+        margin-bottom: 6px;
+        font-size: 18px;
+      }
+
+      .people-groups {
+        display: grid;
+        gap: 46px;
+        margin-top: 64px;
+      }
+
+      .people-group h3 {
+        margin-bottom: 8px;
+        font-size: 28px;
+      }
+
+      .people-group > p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .people-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 16px;
+        margin-top: 20px;
+      }
+
+      .person-card {
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: linear-gradient(145deg, #ffffff, #f7fbff);
+      }
+
+      .person-card a {
+        color: var(--blue);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .person-card h4 {
+        margin: 16px 0 0;
+        font-size: 18px;
+        line-height: 1.25;
+      }
+
+      .person-portrait {
+        width: 96px;
+        height: 96px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 24px;
+        object-fit: cover;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
       }
 
       .timeline {
@@ -672,6 +765,17 @@
           grid-template-columns: 1fr;
         }
 
+        .agenda-header,
+        .agenda-talk,
+        .agenda-break {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+
+        .people-grid {
+          grid-template-columns: 1fr;
+        }
+
         .past-grid {
           grid-template-columns: 1fr;
         }
@@ -723,7 +827,7 @@
       <div class="event-grid">
         <div class="event-item">
           <p class="event-label">Time</p>
-          <p class="event-value">Nov 8, 2026</p>
+          <p class="event-value">Nov 8, 2026 · 8:00–11:30 AM</p>
         </div>
         <div class="event-item">
           <p class="event-label">Place</p>
@@ -765,19 +869,239 @@
       </section>
 
       <section class="section soft" id="program">
-        <div class="wrap split">
-          <div>
+        <div class="wrap">
+          <div class="program-intro">
             <p class="section-kicker">Program</p>
-            <h2>Program details will be announced later.</h2>
+            <h2>Workshop Agenda</h2>
             <p class="lead">
-              Session titles, speakers, and timing are intentionally left as placeholders until confirmed.
+              Sunday, November 8, 2026, 8:00–11:30 AM in Dallas, Texas.
             </p>
           </div>
-          <div class="program-placeholder">
-            <div>
-              <strong>TBD</strong>
-              <span>Program schedule forthcoming</span>
+
+          <div class="agenda">
+            <section class="agenda-session">
+              <div class="agenda-header">
+                <time class="agenda-time">8:00–8:05 AM</time>
+                <div>
+                  <h3 class="agenda-title">Welcome and Introduction</h3>
+                  <p class="agenda-meta">Rui Zhang</p>
+                </div>
+              </div>
+            </section>
+
+            <section class="agenda-session">
+              <div class="agenda-header">
+                <time class="agenda-time">8:05–9:20 AM</time>
+                <div>
+                  <h3 class="agenda-title">Student Consortium</h3>
+                  <p class="agenda-meta">Moderators: Sunyang Fu and Jakir Hossain Bhuiyan Masud</p>
+                  <p class="agenda-meta">Mentors: Jiyeong Kim, Halil Kilicoglu, and Yanshan Wang</p>
+                </div>
+              </div>
+              <article class="agenda-talk">
+                <time class="agenda-time">8:05–8:20 AM</time>
+                <div>
+                  <h3>Lost In Transcription: Can Symptoms of Hallucinations Be Tracked Through Speech Recordings?</h3>
+                  <p class="agenda-speakers">Erin Doherty · University of Washington</p>
+                </div>
+              </article>
+              <article class="agenda-talk">
+                <time class="agenda-time">8:20–8:35 AM</time>
+                <div>
+                  <h3>Practical Solutions for Biomedical Information Extraction with Large Language Models</h3>
+                  <p class="agenda-speakers">Enshuo Hsu · UTHealth Houston</p>
+                </div>
+              </article>
+              <article class="agenda-talk">
+                <time class="agenda-time">8:35–8:50 AM</time>
+                <div>
+                  <h3>Fine-Tuning Improves Path Adherence on Unseen Clinical Guidelines</h3>
+                  <p class="agenda-speakers">Geoffrey Martin · Weill Cornell Medicine</p>
+                </div>
+              </article>
+              <article class="agenda-talk">
+                <time class="agenda-time">8:50–9:05 AM</time>
+                <div>
+                  <h3>Towards Efficient, Adaptive, and Reliable Large Language Models for Biomedical Natural Language Processing</h3>
+                  <p class="agenda-speakers">Zaifu Zhan · University of Minnesota</p>
+                </div>
+              </article>
+              <article class="agenda-talk">
+                <time class="agenda-time">9:05–9:20 AM</time>
+                <div>
+                  <h3>Leveraging Large Language Models for Medical Concept Normalization in Electronic Health Records</h3>
+                  <p class="agenda-speakers">Ekin Soysal · UTHealth Houston</p>
+                </div>
+              </article>
+            </section>
+
+            <div class="agenda-break">
+              <time class="agenda-time">9:20–9:50 AM</time>
+              <strong>Coffee Break</strong>
             </div>
+
+            <section class="agenda-session">
+              <div class="agenda-header">
+                <time class="agenda-time">9:50–11:00 AM</time>
+                <div>
+                  <h3 class="agenda-title">Lightning Talks</h3>
+                  <p class="agenda-meta">Moderators: Xinsong Du and Jiyeong Kim</p>
+                </div>
+              </div>
+              <article class="agenda-talk">
+                <time class="agenda-time">9:50–10:00 AM</time>
+                <div>
+                  <h3>Evaluating Large Language Models for Global Health</h3>
+                  <p class="agenda-speakers">Rui Yang, Huitao Li, Matthew Yu Heng Wong, Kunyu Yu, Xin Li, Jonathan Chong Kai Liew, Jingchi Liao, Yifan Peng, Douglas Teodoro, and Nan Liu</p>
+                </div>
+              </article>
+              <article class="agenda-talk">
+                <time class="agenda-time">10:00–10:10 AM</time>
+                <div>
+                  <h3>RareMind: Knowledge Graph-Guided Multi-Agent AI for Recovering Missed Rare Disease Diagnoses from Longitudinal EHRs</h3>
+                  <p class="agenda-speakers">Quan Nguyen and Kai Wang</p>
+                </div>
+              </article>
+              <article class="agenda-talk">
+                <time class="agenda-time">10:10–10:20 AM</time>
+                <div>
+                  <h3>Counterfactual Auditing of Bias in Open-Source Large Language Models for Clinical Triage</h3>
+                  <p class="agenda-speakers">Manar Aljohani, Brandon Ho, Kenneth McKinley, Dennis Ren, and Xuan Wang</p>
+                </div>
+              </article>
+              <article class="agenda-talk">
+                <time class="agenda-time">10:20–10:30 AM</time>
+                <div>
+                  <h3>Hybrid Longitudinal Phenotyping of Inborn Errors of Immunity Using Literature-Derived Disease Models and Large Language Models</h3>
+                  <p class="agenda-speakers">Mansooreh Ahmadian, Zhixin Lun, Pia J. Hauk, Sara J. Deakyne Davies, Todd Miller, Jordan Abbott, and Elena W. Y. Hsieh</p>
+                </div>
+              </article>
+              <article class="agenda-talk">
+                <time class="agenda-time">10:30–10:40 AM</time>
+                <div>
+                  <h3>Youth Suicide Risk Factor Discovery with LLM-Guided Topic Modeling</h3>
+                  <p class="agenda-speakers">Max Lovitt, Geoffrey Martin, and Yifan Peng</p>
+                </div>
+              </article>
+              <article class="agenda-talk">
+                <time class="agenda-time">10:40–10:50 AM</time>
+                <div>
+                  <h3>Overview of the ArchEHR-QA 2026 Shared Task on Grounded Question Answering from Electronic Health Records</h3>
+                  <p class="agenda-speakers">Sarvesh Soni and Dina Demner-Fushman</p>
+                </div>
+              </article>
+              <article class="agenda-talk">
+                <time class="agenda-time">10:50–11:00 AM</time>
+                <div>
+                  <h3>Toward a Community Benchmark for Communicated Empathy in Ambient Clinical Conversations: A Shared Task Proposal</h3>
+                  <p class="agenda-speakers">Quang Loc Lam</p>
+                </div>
+              </article>
+            </section>
+
+            <section class="agenda-session">
+              <div class="agenda-header">
+                <time class="agenda-time">11:00–11:30 AM</time>
+                <div>
+                  <h3 class="agenda-title">Panel: Generative AI in Learning Health Systems</h3>
+                  <p class="agenda-meta">Moderators: Rui Zhang and Yonghui Wu</p>
+                  <p class="agenda-meta">Panelists: Smitha Ganeshan, Genevieve Melton-Meaux, Abeed Sarker, and Yuan Luo</p>
+                </div>
+              </div>
+            </section>
+
+            <div class="agenda-break">
+              <time class="agenda-time">11:30–11:45 AM</time>
+              <strong>Post-Workshop Group Photo</strong>
+            </div>
+          </div>
+
+          <div class="people-groups">
+            <section class="people-group">
+              <h3>Mentors</h3>
+              <p>Mentors for the Student Consortium.</p>
+              <div class="people-grid">
+                <article class="person-card">
+                  <a href="https://profiles.stanford.edu/jiyeong-kim"><img class="person-portrait" src="src/jiyeong.png" alt="Jiyeong Kim" loading="lazy"></a>
+                  <h4>Jiyeong Kim, PhD</h4>
+                  <p>Postdoctoral Scholar, Stanford University</p>
+                </article>
+                <article class="person-card">
+                  <a href="https://ischool.illinois.edu/people/halil-kilicoglu"><img class="person-portrait" src="src/halil.jpg" alt="Halil Kilicoglu" loading="lazy"></a>
+                  <h4>Halil Kilicoglu, PhD</h4>
+                  <p>Associate Professor, University of Illinois Urbana-Champaign</p>
+                </article>
+                <article class="person-card">
+                  <a href="https://amia.org/membership/yanshan-wang-phd"><img class="person-portrait" src="src/naoshi.png" alt="Yanshan Wang" loading="lazy"></a>
+                  <h4>Yanshan Wang, PhD</h4>
+                  <p>Associate Professor and Vice Chair of Research, University of Pittsburgh</p>
+                </article>
+              </div>
+            </section>
+
+            <section class="people-group">
+              <h3>Moderators</h3>
+              <p>Session chairs for the Student Consortium, Lightning Talks, and Panel.</p>
+              <div class="people-grid">
+                <article class="person-card">
+                  <a href="https://amia.org/membership/sunyang-fu-phd-mhi"><img class="person-portrait" src="src/sunyang2.jpg" alt="Sunyang Fu" loading="lazy"></a>
+                  <h4>Sunyang Fu, PhD, MHI</h4>
+                  <p>Associate Professor, UTHealth Houston</p>
+                </article>
+                <article class="person-card">
+                  <a href="https://amia.org/membership/jakir-hossain-bhuiyan-masud-phd"><img class="person-portrait" src="src/jakir.jpg" alt="Jakir Hossain Bhuiyan Masud" loading="lazy"></a>
+                  <h4>Jakir Hossain Bhuiyan Masud, PhD</h4>
+                  <p>University of Alabama at Birmingham</p>
+                </article>
+                <article class="person-card">
+                  <a href="https://amia.org/membership/xinsong-du-phd"><img class="person-portrait" src="src/xinsong.png" alt="Xinsong Du" loading="lazy"></a>
+                  <h4>Xinsong Du, PhD</h4>
+                  <p>Postdoctoral Research Fellow, Harvard Medical School</p>
+                </article>
+                <article class="person-card">
+                  <a href="https://profiles.stanford.edu/jiyeong-kim"><img class="person-portrait" src="src/jiyeong.png" alt="Jiyeong Kim" loading="lazy"></a>
+                  <h4>Jiyeong Kim, PhD</h4>
+                  <p>Postdoctoral Scholar, Stanford University</p>
+                </article>
+                <article class="person-card">
+                  <a href="https://amia.org/membership/rui-zhang-phd-famia-facmi"><img class="person-portrait" src="src/rui.png" alt="Rui Zhang" loading="lazy"></a>
+                  <h4>Rui Zhang, PhD, FACMI, FAMIA, FIAHSI</h4>
+                  <p>Professor, University of Minnesota</p>
+                </article>
+                <article class="person-card">
+                  <a href="https://hobi.med.ufl.edu/profile/wu-yonghui/"><img class="person-portrait" src="src/yonghui.jpg" alt="Yonghui Wu" loading="lazy"></a>
+                  <h4>Yonghui Wu, PhD</h4>
+                  <p>Professor and Chief Data Scientist, University of Florida</p>
+                </article>
+              </div>
+            </section>
+
+            <section class="people-group">
+              <h3>Panelists</h3>
+              <p>Panelists for “Generative AI in Learning Health Systems.”</p>
+              <div class="people-grid">
+                <article class="person-card">
+                  <a href="https://profiles.ucsf.edu/smitha.ganeshan"><img class="person-portrait" src="src/smitha.jpg" alt="Smitha Ganeshan" loading="lazy"></a>
+                  <h4>Smitha Ganeshan, MD, MBA</h4>
+                  <p>Medical Director, AI Programs, UCSF Health</p>
+                </article>
+                <article class="person-card">
+                  <a href="https://med.umn.edu/bio/genevieve-melton-meaux"><img class="person-portrait" src="src/genevieve.jpg" alt="Genevieve Melton-Meaux" loading="lazy"></a>
+                  <h4>Genevieve Melton-Meaux, MD, PhD</h4>
+                  <p>Director, Center for Learning Health System Sciences; Senior Associate Dean for Health Informatics and Data Science, University of Minnesota</p>
+                </article>
+                <article class="person-card">
+                  <a href="https://winshipcancer.emory.edu/profiles/sarker-abeed.php"><img class="person-portrait" src="src/abeed.png" alt="Abeed Sarker" loading="lazy"></a>
+                  <h4>Abeed Sarker, PhD</h4>
+                  <p>Associate Professor, Department of Biomedical Informatics, Emory University School of Medicine</p>
+                </article>
+                <article class="person-card">
+                  <a href="https://bime.uw.edu/"><img class="person-portrait" src="src/yuan.jpg" alt="Yuan Luo" loading="lazy"></a>
+                  <h4>Yuan Luo, PhD, FACMI, FAIMBE, FAMIA, FIAHSI</h4>
+                  <p>Chief Data Officer, UW Medicine; Professor, Biomedical Informatics and Medical Education, University of Washington</p>
+                </article>
+              </div>
+            </section>
           </div>
         </div>
       </section>
@@ -942,7 +1266,8 @@
               <span class="role-pill">Past Chair</span>
               <h3>Yanshan Wang, PhD</h3>
               <p>
-                Assistant Professor and Vice-Chair of Health Informatics Research, University of Pittsburgh, PA.
+                Associate Professor and Vice Chair of Research, Department of Biomedical Informatics,
+                University of Pittsburgh, PA.
               </p>
               <a class="profile-link" href="https://amia.org/membership/yanshan-wang-phd">Profile</a>
             </article>
